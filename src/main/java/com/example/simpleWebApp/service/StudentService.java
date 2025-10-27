@@ -1,5 +1,6 @@
 package com.example.simpleWebApp.service;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.simpleWebApp.dto.StudentRequestDTO;
 import com.example.simpleWebApp.dto.StudentResponseDTO;
+import com.example.simpleWebApp.exception.StudentNotFoundException;
 import com.example.simpleWebApp.mapper.StudentMapper;
 import com.example.simpleWebApp.model.Student;
 import com.example.simpleWebApp.repository.StudentRepo;
@@ -33,7 +35,8 @@ public class StudentService {
 	
 	public StudentResponseDTO getStudentDetailsId(int studId) {
 
-		Student student = repo.findById(studId).orElse(new Student());
+		Student student = repo.findById(studId)
+				.orElseThrow(() -> new StudentNotFoundException("Student with id " + studId + " not found"));
 		return mapper.toDTO(student);
 	}
 

@@ -3,6 +3,7 @@ package com.example.simpleWebApp.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +18,10 @@ import com.example.simpleWebApp.dto.StudentResponseDTO;
 import com.example.simpleWebApp.model.Student;
 import com.example.simpleWebApp.service.StudentService;
 
+import jakarta.validation.Valid;
+
 @RestController
+@Validated
 @RequestMapping("/student")
 public class StudentController {
 	
@@ -37,12 +41,12 @@ public class StudentController {
 	}
 	
 	@PostMapping("/add")
-	public void addStudentDetails(@RequestBody StudentRequestDTO s) {
+	public void addStudentDetails(@Valid @RequestBody StudentRequestDTO s) {
 		studentservice.addStudent(s);
 	}
 	
 	@PutMapping("/update")
-	public void updateStudentdata(@RequestBody StudentRequestDTO st) {
+	public void updateStudentdata(@Valid @RequestBody StudentRequestDTO st) {
 		studentservice.updateStudent(st);
 	}
 	

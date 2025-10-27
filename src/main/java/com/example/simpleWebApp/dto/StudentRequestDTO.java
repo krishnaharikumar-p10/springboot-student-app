@@ -1,20 +1,27 @@
 package com.example.simpleWebApp.dto;
 
+import jakarta.validation.constraints.NotNull;
 
 public class StudentRequestDTO {
 	
 
 	private int studId;
+	@NotNull(message = "Name cannot be null")
 	private String studName;
+	@NotNull(message = "Email cannot be null")
 	private String studEmail;
+	@NotNull(message = "Password cannot be null")
 	private String studPassword;
 	
 	public StudentRequestDTO() {} 
 
 
 	public StudentRequestDTO(int studId, String studName, String studEmail,String studPassword) {
-		this.studName = studName;
-		this.studEmail = studEmail;
+		this.studId = studId;          
+	    this.studName = studName;
+	    this.studEmail = studEmail;
+	    this.studPassword = studPassword; 
+
 	}
 	
 
