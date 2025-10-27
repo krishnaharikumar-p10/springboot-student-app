@@ -60,4 +60,10 @@ public class StudentRequestDTO {
 		this.studEmail = studEmail;
 	}
 	
+	@Override
+	public String toString() {
+		return "StudentRequestDTO [studId=" + studId + ", studName=" + studName + ", studEmail=" + studEmail
+				+ ", studPassword=" + studPassword + "]";
+	}
+	
 }

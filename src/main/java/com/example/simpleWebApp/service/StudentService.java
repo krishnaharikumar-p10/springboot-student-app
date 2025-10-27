@@ -49,7 +49,10 @@ public class StudentService {
 	
 	public void updateStudent(StudentRequestDTO st) {
 		
-		Student student= mapper.toEntity(st);
+		System.out.println(st);
+		Student existingstudent= repo.findById(st.getStudId()).orElseThrow(() -> new StudentNotFoundException("Student with id " + st.getStudId() + " not found"));
+	
+		Student student= mapper.updateEntityfromDTO(st,existingstudent);
 		repo.save(student);
 	}
 

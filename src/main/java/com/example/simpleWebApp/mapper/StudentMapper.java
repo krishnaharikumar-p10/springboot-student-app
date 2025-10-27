@@ -27,6 +27,15 @@ public class StudentMapper {
 		
 		return student;
 		
-
+	}
+	
+	public Student updateEntityfromDTO (StudentRequestDTO s,Student stud) {
+		
+		stud.setStudName(s.getStudName());
+		stud.setStudEmail(s.getStudEmail());
+		stud.setStudPassword(s.getStudPassword());
+		return stud;
+		
+		
 	}
 }
