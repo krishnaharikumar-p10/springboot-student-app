@@ -11,6 +11,12 @@ public class StudentResponseDTO {
 	public StudentResponseDTO() {} 
 
 
+	public StudentResponseDTO(int studId, String studName, String studEmail) {
+		this.studId=studId;
+		this.studName = studName;
+		this.studEmail = studEmail;
+	}
+
 	public int getStudId() {
 		return studId;
 	}
@@ -18,12 +24,6 @@ public class StudentResponseDTO {
 
 	public void setStudId(int studId) {
 		this.studId = studId;
-	}
-
-
-	public StudentResponseDTO(int studId, String studName, String studEmail) {
-		this.studName = studName;
-		this.studEmail = studEmail;
 	}
 
 	public String getStudName() {

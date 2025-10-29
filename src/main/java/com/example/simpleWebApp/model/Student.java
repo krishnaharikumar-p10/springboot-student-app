@@ -10,21 +10,32 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int studId;
-	
 	private String studName;
 	private String studEmail;
 	private String studPassword;
+	private long studContact;
 
 
 	public Student() {} 
 
 	
-	public Student(int studId, String studName, String studEmail,String studPassword) {
+	public Student(int studId, String studName, String studEmail,String studPassword,long studContact) {
 		this.studId = studId;
+		this.studContact=studContact;
 		this.studName = studName;
 		this.studEmail = studEmail;
 		this.studPassword=studPassword;
 	}
+	public long getStudContact() {
+		return studContact;
+	}
+
+
+	public void setStudContact(long studContact) {
+		this.studContact = studContact;
+	}
+
+
 	public int getStudId() {
 		return studId;
 	}

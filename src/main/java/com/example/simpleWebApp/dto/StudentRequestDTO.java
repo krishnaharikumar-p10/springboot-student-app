@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class StudentRequestDTO {
 	
-
+	@NotNull(message = "Id cannot be null")
 	private int studId;
 	@NotNull(message = "Name cannot be null")
 	private String studName;
@@ -12,18 +12,29 @@ public class StudentRequestDTO {
 	private String studEmail;
 	@NotNull(message = "Password cannot be null")
 	private String studPassword;
+	@NotNull(message = "Contact Number cannot be null")
+	private long studContact;
 	
 	public StudentRequestDTO() {} 
 
 
-	public StudentRequestDTO(int studId, String studName, String studEmail,String studPassword) {
-		this.studId = studId;          
-	    this.studName = studName;
-	    this.studEmail = studEmail;
-	    this.studPassword = studPassword; 
+	public StudentRequestDTO(int studId, String studName, String studEmail,String studPassword,long studContact) {
+		this.studId = studId;
+		this.studContact=studContact;
+		this.studName = studName;
+		this.studEmail = studEmail;
+		this.studPassword=studPassword;
 
 	}
-	
+	public long getStudContact() {
+		return studContact;
+	}
+
+
+	public void setStudContact(long studContact) {
+		this.studContact = studContact;
+	}
+
 
 	public int getStudId() {
 		return studId;

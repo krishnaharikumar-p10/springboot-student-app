@@ -24,7 +24,7 @@ public class StudentMapper {
 		student.setStudName(s.getStudName());
 		student.setStudEmail(s.getStudEmail());
 		student.setStudPassword(s.getStudPassword());
-		
+		student.setStudContact(s.getStudContact());
 		return student;
 		
 	}
@@ -34,6 +34,7 @@ public class StudentMapper {
 		stud.setStudName(s.getStudName());
 		stud.setStudEmail(s.getStudEmail());
 		stud.setStudPassword(s.getStudPassword());
+		stud.setStudContact(s.getStudContact());
 		return stud;
 		
 		
